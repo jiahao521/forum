@@ -22,4 +22,7 @@ public class UserService {
         userDao.save(user);
 
     }
+
+    //验证是否账号已被占用
+
 }

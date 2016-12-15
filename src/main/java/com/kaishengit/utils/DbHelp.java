@@ -7,8 +7,11 @@ import org.apache.commons.dbutils.QueryRunner;
 import org.apache.commons.dbutils.ResultSetHandler;
 
 import com.kaishengit.exception.DataAccessException;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 public class DbHelp {
+    private static Logger logger = LoggerFactory.getLogger(DbHelp.class);
 
     private static Connection getConnection() {
         return ConnectionManager.getConnection();
@@ -20,8 +23,9 @@ public class DbHelp {
             QueryRunner queryRunner = new QueryRunner(ConnectionManager.getDataSource());
             queryRunner.update(sql, params);
 
-            System.out.println("SQL: " + sql);
+            logger.debug("SQL {}",sql);
         } catch (SQLException ex) {
+            logger.error("执行 {} 异常",sql );
             throw new DataAccessException("执行"+ sql + "异常",ex);
         }
     }
@@ -32,9 +36,10 @@ public class DbHelp {
         try {
             T t = queryRunner.query(sql,handler,params);
 
-            System.out.println("SQL: " + sql);
+            logger.debug("SQL : {}",sql);
             return t;
         } catch (SQLException e) {
+            logger.error("执行 {} 异常" , sql);
             throw new DataAccessException("执行"+ sql + "异常",e);
         }
     }
@@ -44,6 +49,7 @@ public class DbHelp {
             try {
                 connection.close();
             } catch (SQLException e) {
+                logger.error("关闭Connection异常");
                 throw new DataAccessException("关闭Connection异常",e);
             }
         }
