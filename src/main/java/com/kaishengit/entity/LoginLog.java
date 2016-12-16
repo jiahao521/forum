@@ -1,11 +1,12 @@
 package com.kaishengit.entity;
 
+import java.io.Serializable;
 import java.sql.Timestamp;
 
 /**
  * Created by jiahao0 on 2016/12/15.
  */
-public class LoginLog {
+public class LoginLog implements Serializable{
     private Integer id;
     private String ip;
     private Timestamp logintime;

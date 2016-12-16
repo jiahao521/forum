@@ -1,12 +1,13 @@
 package com.kaishengit.entity;
 
 import javax.print.attribute.IntegerSyntax;
+import java.io.Serializable;
 import java.sql.Timestamp;
 
 /**
  * Created by jiahao0 on 2016/12/15.
  */
-public class User {
+public class User implements Serializable {
     //账号状态
     //0 未激活 ；1 已激活（正常）；2 被禁用
     public static Integer USERSTATE_UNACTIVE = 0;
@@ -17,7 +18,7 @@ public class User {
     public static String USER_DEFAULT_AVATOR = "default_avatar.png";
 
     private Integer id;
-    private String usernaem;
+    private String username;
     private String password;
     private String email;
     private Integer state;
@@ -49,12 +50,12 @@ public class User {
         this.id = id;
     }
 
-    public String getUsernaem() {
-        return usernaem;
+    public String getUsername() {
+        return username;
     }
 
-    public void setUsernaem(String usernaem) {
-        this.usernaem = usernaem;
+    public void setUsername(String username) {
+        this.username = username;
     }
 
     public String getPassword() {
