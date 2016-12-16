@@ -25,7 +25,7 @@ $(function () {
             email:{
                 required:true,
                 email:true,
-                /*remote:"/validate/email"*/
+                remote:"/validate/email"
             },
             tel:{
                 required:true,
@@ -51,7 +51,7 @@ $(function () {
             email:{
                 required:"请输入电子邮件",
                 email:"邮件格式错误",
-                /*remote:"电子邮件已被占用"*/
+                remote:"电子邮件已被占用"
             },
             tel:{
                 required:"请输入手机号码",
