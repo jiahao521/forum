@@ -3,7 +3,7 @@ package com.kaishengit.web.user;
 import com.kaishengit.entity.User;
 import com.kaishengit.servise.UserService;
 import com.kaishengit.web.BaseServlet;
-import org.apache.commons.codec.binary.Base32;
+
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;

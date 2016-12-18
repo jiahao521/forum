@@ -27,6 +27,7 @@ public class EncodingFilter extends AbstractFilter {
         servletRequest.setCharacterEncoding("UTF-8");
         servletResponse.setCharacterEncoding("UTF-8");
 
+        //放行
         filterChain.doFilter(servletRequest,servletResponse);
     }
 }

@@ -11,18 +11,19 @@ import org.slf4j.LoggerFactory;
 public class EmailUtil {
     private static Logger logger = LoggerFactory.getLogger(EmailUtil.class);
 
-    public static void sendHtmlEmail(String toAddress,String subjict,String context) {
+    public static void sendHtmlEmail(String toAddress,String subject,String context) {
 
         HtmlEmail htmlEmail = new HtmlEmail();
-        htmlEmail.setHostName(Config.get("email.smpt"));
+        htmlEmail.setHostName(Config.get("email.smtp"));
         htmlEmail.setSmtpPort(Integer.valueOf(Config.get("email.port")));
         htmlEmail.setAuthentication(Config.get("email.username"),Config.get("email.password"));
         htmlEmail.setStartTLSEnabled(true);
 
 
+
         try {
             htmlEmail.setFrom(Config.get("email.frommail"));
-            htmlEmail.setSubject(subjict);
+            htmlEmail.setSubject(subject);
             htmlEmail.setHtmlMsg(context);
             htmlEmail.addTo(toAddress);
 

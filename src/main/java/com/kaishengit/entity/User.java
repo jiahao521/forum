@@ -1,6 +1,5 @@
 package com.kaishengit.entity;
 
-import javax.print.attribute.IntegerSyntax;
 import java.io.Serializable;
 import java.sql.Timestamp;
 
@@ -10,12 +9,12 @@ import java.sql.Timestamp;
 public class User implements Serializable {
     //账号状态
     //0 未激活 ；1 已激活（正常）；2 被禁用
-    public static Integer USERSTATE_UNACTIVE = 0;
-    public static Integer USERSTATE_ACTIVE = 1;
-    public static Integer USERSTATE_DISABLED = 2;
+    public static final Integer USERSTATE_UNACTIVE = 0;
+    public static final Integer USERSTATE_ACTIVE = 1;
+    public static final Integer USERSTATE_DISABLED = 2;
 
     //新注册账号默认头像
-    public static String USER_DEFAULT_AVATOR = "default_avatar.png";
+    public static final String USER_DEFAULT_AVATOR = "default_avatar.png";
 
     private Integer id;
     private String username;
